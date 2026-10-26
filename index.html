@@ -11,9 +11,17 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jummzy.github.io/lena-guide/">
 <meta property="og:image" content="https://jummzy.github.io/lena-guide/img/hero.jpg">
+<meta property="og:image:width" content="1376">
+<meta property="og:image:height" content="768">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#fff6f8">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23e0628f' d='M12 21s-7.5-4.6-9.5-9.2C1 8.3 3.2 4.5 7 4.5c2.1 0 3.6 1.2 5 3 1.4-1.8 2.9-3 5-3 3.8 0 6 3.8 4.5 7.3C19.5 16.4 12 21 12 21z'/%3E%3C/svg%3E">
-<link rel="apple-touch-icon" href="img/star.jpg">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Путь Лены">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <script>
@@ -246,6 +254,20 @@ footer { border-top: 1px solid var(--line); padding-block: 22px 44px; font-size:
 footer .hand { font-size: 24px; }
 footer ul { display: grid; gap: 4px; }
 
+/* Следующий шаг, отправка прогресса, установка на экран */
+.next { scroll-margin-top: 130px; background: var(--card); border: 2px solid var(--rose-2); border-radius: 22px; padding: 16px 18px; display: grid; gap: 6px; box-shadow: var(--shadow); }
+.next-k { display: flex; align-items: center; gap: 6px; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--rose); font-weight: 700; }
+.next-w { font-size: 14px; color: var(--lav); font-weight: 700; }
+.btn { justify-self: start; font: 700 15px/1 var(--f-body); color: #fff; text-decoration: none; cursor: pointer; background: var(--rose); border: 0; border-radius: 99px; padding: 11px 18px; box-shadow: 0 4px 12px rgba(217, 85, 127, .25); }
+.btn.soft { color: var(--rose); background: var(--soft); box-shadow: none; }
+.btn:focus-visible { outline: 2px solid var(--rose); outline-offset: 2px; }
+.q.pulse { box-shadow: 0 0 0 3px var(--rose-2); transition: box-shadow .3s; }
+.share-text { font-size: 14.5px; background: var(--soft); border-radius: 14px; padding: 10px 12px; -webkit-user-select: all; user-select: all; overflow-wrap: anywhere; }
+.lvl { text-decoration: none; }
+.pwa { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; color: var(--ink-2); background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 12px 14px; }
+.pwa .ico { width: 34px; height: 34px; border-radius: 11px; }
+.pwa .ico svg { width: 18px; height: 18px; }
+
 @media (min-width: 640px) {
   body { font-size: 17.5px; }
   .plans { grid-template-columns: repeat(3, 1fr); }
@@ -286,7 +308,7 @@ footer ul { display: grid; gap: 4px; }
   <div class="wrap">
     <div class="bar-row">
       <a class="brand" href="#top"><svg class="h"><use href="#i-heart"/></svg>Путь Лены</a>
-      <div class="lvl"><span id="heartsTop">0</span><svg class="h"><use href="#i-heart"/></svg><b id="lvlTop">Семечко</b></div>
+      <a class="lvl" href="#next" aria-label="Сердечки, уровень и следующий шаг"><span id="heartsTop">0</span><svg class="h"><use href="#i-heart"/></svg><b id="lvlTop">Семечко</b></a>
     </div>
     <div class="prog" aria-hidden="true"><i id="barTop"></i></div>
     <nav class="chips" aria-label="Главы">
@@ -335,7 +357,16 @@ footer ul { display: grid; gap: 4px; }
           <span data-lv="0">Семечко</span><span data-lv="1">Росток</span><span data-lv="2">Бутон</span><span data-lv="3">Цветок</span><span data-lv="4">Букет</span>
         </div>
         <p class="small muted">Отмечай пройденные шаги — за каждый получаешь сердечки, и твой цветок растёт. Всё сохраняется на этом устройстве.</p>
+        <button class="btn soft" type="button" id="shareBtn">Поделиться прогрессом</button>
+        <p class="share-text" id="shareText" hidden></p>
       </div>
+    </div>
+
+    <div class="next" id="next" aria-live="polite">
+      <span class="next-k"><svg class="h"><use href="#i-heart"/></svg>Твой следующий шаг</span>
+      <span class="next-w" id="nextWhere"></span>
+      <p id="nextText"></p>
+      <a class="btn" href="#top" id="nextGo">Перейти к шагу</a>
     </div>
 
     <ol class="map" aria-label="Карта пути">
@@ -345,6 +376,8 @@ footer ul { display: grid; gap: 4px; }
       <li><a href="#ch4"><img src="img/letter.jpg" alt=""><span class="t"><b>Глава 4. Первая работа</b><span>резюме и отклики</span></span><span class="mark" data-ch-mark="ch4"></span></a></li>
       <li><a href="#final"><img src="img/home.jpg" alt=""><span class="t"><b>Мечта</b><span>любимая работа из дома</span></span><span class="mark" data-ch-mark="final"></span></a></li>
     </ol>
+
+    <p class="pwa"><span class="ico"><svg><use href="#i-sparkle"/></svg></span><span>Сохрани гайд на экран телефона, чтобы он всегда был под рукой. На iPhone: открой его в Safari, нажми «Поделиться» и выбери «На экран „Домой“». На Android: меню браузера → «Добавить на главный экран».</span></p>
   </section>
 
   <div class="hearts" aria-hidden="true"><svg class="h"><use href="#i-heart"/></svg><svg class="h"><use href="#i-heart"/></svg><svg class="h"><use href="#i-heart"/></svg></div>
@@ -399,7 +432,7 @@ footer ul { display: grid; gap: 4px; }
           <label class="q" for="q-files"><input type="checkbox" id="q-files" data-h="1"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt">Открой <kbd>Settings</kbd> → <kbd>Capabilities</kbd> и включи пункт <kbd>Create and edit files</kbd>. В старом меню он называется <kbd>Code execution and file creation</kbd>. Без него навыки не работают.</span><span class="pts">+1 <svg class="h"><use href="#i-heart"/></svg></span></label>
           <label class="q" for="q-skill"><input type="checkbox" id="q-skill" data-h="2"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt">Открой <kbd>Customize</kbd> → <kbd>Skills</kbd>, нажми <kbd>+</kbd> → <kbd>Create skill</kbd> → <kbd>Upload a skill</kbd> и выбери архив <b>lena-mentor.zip</b>.</span><span class="pts">+2 <svg class="h"><use href="#i-heart"/></svg></span></label>
           <label class="q" for="q-on"><input type="checkbox" id="q-on" data-h="1"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt">Проверь, что навык <b>lena-mentor</b> появился в списке и включён.</span><span class="pts">+1 <svg class="h"><use href="#i-heart"/></svg></span></label>
-          <label class="q" for="q-hello"><input type="checkbox" id="q-hello" data-h="2"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt">Напиши Claude «Привет, я Лена. Давай начнём?» — он тепло поздоровается, покажет весь путь и предложит первый шаг.</span><span class="pts">+2 <svg class="h"><use href="#i-heart"/></svg></span></label>
+          <label class="q" for="q-hello"><input type="checkbox" id="q-hello" data-h="2"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt">Напиши Claude «Привет, я Лена. Давай начнём мой путь в IT?» — он тепло поздоровается, покажет весь путь и предложит первый шаг.</span><span class="pts">+2 <svg class="h"><use href="#i-heart"/></svg></span></label>
         </div>
         <p class="small muted">Если какая-то кнопка называется чуть иначе, не переживай: сфотографируй экран и спроси Claude, куда нажать, или напиши мне. Подробно — в <a href="https://support.claude.com/en/articles/12512180" target="_blank" rel="noopener">справке Anthropic про навыки</a>.</p>
       </div>
@@ -672,7 +705,67 @@ footer ul { display: grid; gap: 4px; }
       var mark = document.querySelector('[data-ch-mark="' + id + '"]');
       if (mark) mark.textContent = full ? 'пройдено' : (done ? done + ' / ' + list.length : '');
     });
+    updateNext(h, LEVELS[li][0]);
   }
+
+  // Карточка «Твой следующий шаг»: первый неотмеченный шаг по порядку
+  var nextTarget = null, lastHearts = 0, lastLevel = LEVELS[0][0];
+  function chapterOf(b) {
+    var sec = b.closest('[data-ch]');
+    var h = sec && sec.querySelector('h2');
+    return h ? h.textContent : '';
+  }
+  function updateNext(h, level) {
+    lastHearts = h; lastLevel = level;
+    var b = boxes.filter(function (x) { return !x.checked; })[0];
+    var go = document.getElementById('nextGo');
+    nextTarget = b ? b.closest('.q') : null;
+    if (!b) {
+      document.getElementById('nextWhere').textContent = '';
+      document.getElementById('nextText').textContent = 'Все шаги пройдены. Ты прошла весь путь — это очень красиво.';
+      go.hidden = true;
+      return;
+    }
+    var t = nextTarget.querySelector('.qt').textContent.replace(/\s+/g, ' ').trim();
+    if (t.length > 140) t = t.slice(0, 137).replace(/\s\S*$/, '') + '…';
+    document.getElementById('nextWhere').textContent = chapterOf(b);
+    document.getElementById('nextText').textContent = t;
+    go.hidden = false;
+  }
+  document.getElementById('nextGo').addEventListener('click', function (e) {
+    if (!nextTarget) return;
+    e.preventDefault();
+    var el = nextTarget;
+    el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+    el.classList.add('pulse');
+    setTimeout(function () { el.classList.remove('pulse'); }, 1600);
+  });
+
+  // Поделиться прогрессом: меню «Поделиться» на телефоне, иначе копирование
+  document.getElementById('shareBtn').addEventListener('click', function () {
+    var btn = this;
+    var done = boxes.filter(function (x) { return x.checked; }).length;
+    var url = location.href.split('#')[0];
+    var text = 'Мой путь в IT: уровень «' + lastLevel + '», ' + lastHearts + ' ' + plural(lastHearts, 'сердечко', 'сердечка', 'сердечек') + ', пройдено ' + done + ' из ' + boxes.length + ' шагов 🌸';
+    function said(msg) { btn.textContent = msg; setTimeout(function () { btn.textContent = 'Поделиться прогрессом'; }, 2200); }
+    function showText() {
+      var p = document.getElementById('shareText');
+      p.textContent = text + ' ' + url;
+      p.hidden = false;
+      var r = document.createRange(); r.selectNodeContents(p);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      said('Скопируй текст ниже');
+    }
+    if (navigator.share) {
+      navigator.share({ text: text, url: url }).catch(function (e) { if (e && e.name !== 'AbortError') showText(); });
+      return;
+    }
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text + ' ' + url).then(function () { said('Скопировано — отправь в Телеграм'); }, showText);
+    } else {
+      showText();
+    }
+  });
 
   boxes.forEach(function (b) {
     b.addEventListener('change', function () {
