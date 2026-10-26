@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Путь Лены</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Нежный гайд для Лены: Claude-наставник, выбор IT-профессии и путь к любимой удалённой работе.">
+<meta property="og:title" content="Путь Лены">
+<meta property="og:description" content="Нежный гайд: Claude-наставник, выбор IT-профессии и путь к любимой работе из дома.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jummzy.github.io/lena-guide/">
+<meta property="og:image" content="https://jummzy.github.io/lena-guide/img/hero.jpg">
+<meta name="theme-color" content="#fff6f8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23e0628f' d='M12 21s-7.5-4.6-9.5-9.2C1 8.3 3.2 4.5 7 4.5c2.1 0 3.6 1.2 5 3 1.4-1.8 2.9-3 5-3 3.8 0 6 3.8 4.5 7.3C19.5 16.4 12 21 12 21z'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="img/star.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script>
+/* Шрифты грузим без блокировки страницы */
+(function () {
+  var l = document.createElement('link');
+  l.rel = 'stylesheet';
+  l.href = 'https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&family=Nunito:wght@400;600;700&family=Marck+Script&display=swap';
+  document.head.appendChild(l);
+})();
+</script>
+<style>
+/* Layout: одна мягкая колонка до 760px, акварельные иллюстрации глав, сердечки вместо опыта, уровни-цветы */
+:root {
+  --bg: #fff6f8;
+  --card: #ffffff;
+  --soft: #fdeaf1;
+  --line: #f4d3df;
+  --ink: #4a2f3d;
+  --ink-2: #8b6b7b;
+  --rose: #d9557f;
+  --rose-2: #f3a6c0;
+  --lav: #9d86df;
+  --lav-soft: #efeafd;
+  --mint: #3f9f7f;
+  --shadow: 0 8px 24px rgba(217, 85, 127, .10);
+  --f-display: "Comfortaa", "Trebuchet MS", "Segoe UI", sans-serif;
+  --f-body: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  --f-hand: "Marck Script", "Segoe Script", "Brush Script MT", cursive;
+  color-scheme: light;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1d1420; --card: #281c2c; --soft: #35233a; --line: #4a3349;
+    --ink: #f7e9f0; --ink-2: #c9adbd; --rose: #f28db1; --rose-2: #8c4766;
+    --lav: #bba8f2; --lav-soft: #2f2742; --mint: #8fd6bb;
+    --shadow: 0 8px 24px rgba(0, 0, 0, .35); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1d1420; --card: #281c2c; --soft: #35233a; --line: #4a3349;
+  --ink: #f7e9f0; --ink-2: #c9adbd; --rose: #f28db1; --rose-2: #8c4766;
+  --lav: #bba8f2; --lav-soft: #2f2742; --mint: #8fd6bb;
+  --shadow: 0 8px 24px rgba(0, 0, 0, .35); color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background-color: var(--bg); color: var(--ink);
+  font: 400 17px/1.65 var(--f-body);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cpath fill='%23e0628f' fill-opacity='.07' d='M14 20s-5-3-6.3-6.1C6.7 11.6 8.2 9 10.7 9c1.4 0 2.4.8 3.3 2 .9-1.2 1.9-2 3.3-2 2.5 0 4 2.6 3 4.9C19 17 14 20 14 20zM42 48s-3.6-2.2-4.6-4.4c-.7-1.7.3-3.6 2.1-3.6 1 0 1.8.6 2.5 1.5.7-.9 1.5-1.5 2.5-1.5 1.8 0 2.8 1.9 2.1 3.6C45.6 45.8 42 48 42 48z'/%3E%3C/svg%3E");
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--bg); }
+img { max-width: 100%; }
+a { color: var(--rose); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--rose); outline-offset: 2px; border-radius: 6px; }
+h1, h2, h3, h4 { font-family: var(--f-display); font-weight: 700; text-wrap: balance; margin: 0; line-height: 1.25; letter-spacing: -.01em; }
+p { margin: 0; }
+ul, ol { margin: 0; padding-left: 1.2em; }
+kbd { font: 700 .9em var(--f-body); color: var(--ink); background: var(--soft); border: 1px solid var(--line); border-radius: 7px; padding: 0 6px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+
+.wrap {
+  max-width: 760px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.h { width: 1em; height: 1em; vertical-align: -.12em; fill: var(--rose); }
+
+/* Верхняя панель */
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: color-mix(in srgb, var(--bg) 92%, transparent); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.bar .wrap { padding-block: 10px 8px; display: grid; gap: 8px; }
+.bar-row { display: flex; align-items: center; gap: 10px; }
+.brand { display: flex; align-items: center; gap: 8px; font-family: var(--f-display); font-weight: 700; font-size: 18px; color: var(--ink); text-decoration: none; }
+.brand .h { width: 22px; height: 22px; }
+.lvl { margin-left: auto; display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--ink-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.lvl b { font-family: var(--f-display); color: var(--rose); font-size: 15px; }
+.prog { height: 7px; border-radius: 99px; background: var(--soft); overflow: hidden; }
+.prog i { display: block; height: 100%; width: 0; border-radius: 99px; background: linear-gradient(90deg, var(--lav), var(--rose)); transition: width .5s ease; }
+.chips { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; margin: 0 -2px; padding: 2px; }
+.chips::-webkit-scrollbar { display: none; }
+.chips a { flex: none; font-size: 14px; font-weight: 600; text-decoration: none; color: var(--ink-2); border: 1px solid var(--line); border-radius: 999px; padding: 5px 13px; background: var(--card); }
+
+main { padding-block: 22px 56px; display: grid; gap: 60px; }
+section { scroll-margin-top: 120px; display: grid; gap: 20px; }
+
+/* Обложка */
+.hero { display: grid; gap: 18px; }
+.cover { position: relative; border-radius: 26px; overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--line); background: var(--soft); }
+.cover img { display: block; width: 100%; height: auto; aspect-ratio: 1376 / 768; object-fit: cover; }
+.float { position: absolute; width: 18px; height: 18px; fill: #ef7aa2; opacity: .85; animation: rise 6s ease-in-out infinite; }
+.float.f2 { left: 12%; top: 30%; width: 14px; height: 14px; animation-delay: -2s; }
+.float.f1 { right: 10%; top: 18%; }
+.float.f3 { right: 22%; bottom: 14%; width: 12px; height: 12px; animation-delay: -4s; fill: #b49cf0; }
+@keyframes rise { 0%, 100% { transform: translateY(0) rotate(-6deg); } 50% { transform: translateY(-10px) rotate(6deg); } }
+.hand { font-family: var(--f-hand); font-size: 26px; color: var(--rose); line-height: 1.2; }
+.hero h1 { font-size: clamp(30px, 7.6vw, 44px); }
+.lead { font-size: 18px; max-width: 62ch; }
+.muted { color: var(--ink-2); }
+.small { font-size: 15px; }
+.gift { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start; background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 16px; box-shadow: var(--shadow); }
+.gift .ico { background: var(--soft); }
+
+/* Карточка */
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 18px; display: grid; gap: 14px; box-shadow: var(--shadow); }
+.card h2 { font-size: 21px; display: flex; align-items: center; gap: 8px; }
+.stats { display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; margin: 0; font-size: 16px; }
+.stats dt { color: var(--ink-2); }
+.stats dd { margin: 0; }
+.levels { display: flex; gap: 6px; flex-wrap: wrap; }
+.levels span { font-size: 13px; font-weight: 700; padding: 3px 10px; border-radius: 99px; background: var(--soft); color: var(--ink-2); }
+.levels span.on { background: var(--rose); color: #fff; }
+.card .prog { height: 10px; }
+.pline { display: flex; justify-content: space-between; gap: 10px; font-size: 14px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+
+/* Карта пути */
+.map { list-style: none; padding: 0; display: grid; }
+.map li { position: relative; }
+.map a { display: flex; gap: 14px; align-items: center; padding: 9px 0; color: var(--ink); text-decoration: none; }
+.map img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 2px solid var(--card); box-shadow: 0 0 0 2px var(--rose-2); flex: none; background: var(--soft); }
+.map li:not(:last-child)::after { content: ""; position: absolute; left: 28px; top: 66px; bottom: -8px; border-left: 2px dotted var(--rose-2); }
+.map .t { display: grid; gap: 1px; min-width: 0; }
+.map .t b { font-family: var(--f-display); font-size: 17px; }
+.map .t span { font-size: 14px; color: var(--ink-2); }
+.map .mark { margin-left: auto; font-size: 13px; font-weight: 700; color: var(--mint); white-space: nowrap; }
+
+/* Главы */
+.ch-art { border-radius: 26px; overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); background: var(--soft); }
+.ch-art img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+.ch-art.sq img { object-position: center 45%; }
+.ch-head { display: grid; gap: 4px; }
+.eyebrow { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--lav); font-weight: 700; }
+.ch-head h2 { font-size: clamp(26px, 6.4vw, 34px); }
+.ch-prog { font-size: 14px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.ch-prog.full { color: var(--mint); font-weight: 700; }
+
+.block { display: grid; gap: 12px; }
+.block-h { display: flex; align-items: center; gap: 12px; }
+.block-h h3 { font-size: 20px; }
+.block > p, .block > ul { max-width: 65ch; }
+.list { display: grid; gap: 8px; padding-left: 0; list-style: none; }
+.list li { display: grid; grid-template-columns: 18px 1fr; gap: 10px; }
+.list li .h { width: 15px; height: 15px; margin-top: 6px; }
+
+.ico { width: 40px; height: 40px; flex: none; display: grid; place-items: center; border-radius: 14px; background: var(--card); border: 1px solid var(--line); color: var(--rose); }
+.ico svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.ico .fill { fill: currentColor; stroke: none; }
+.ico.lav { color: var(--lav); }
+.ico.lg { width: 50px; height: 50px; border-radius: 16px; }
+.ico.lg svg { width: 26px; height: 26px; }
+
+/* Задания-сердечки */
+.quests { display: grid; gap: 8px; }
+.q { display: grid; grid-template-columns: 30px 1fr auto; gap: 12px; align-items: start; background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 13px 14px; cursor: pointer; position: relative; -webkit-tap-highlight-color: transparent; }
+.q input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.q .box { width: 28px; height: 28px; display: grid; place-items: center; }
+.q .box svg { width: 26px; height: 26px; fill: transparent; stroke: var(--rose-2); stroke-width: 1.8; transition: fill .2s, stroke .2s, transform .2s; }
+.q input:checked + .box svg { fill: var(--rose); stroke: var(--rose); transform: scale(1.08); }
+.q input:focus-visible + .box svg { outline: 2px solid var(--rose); outline-offset: 2px; border-radius: 6px; }
+.q .qt { min-width: 0; }
+.q .qt b { font-weight: 700; }
+.q .pts { display: inline-flex; align-items: center; gap: 3px; font-size: 13px; font-weight: 700; color: var(--rose); background: var(--soft); border-radius: 99px; padding: 2px 9px; white-space: nowrap; margin-top: 2px; }
+.q .pts .h { width: 12px; height: 12px; }
+.q:has(input:checked) { border-color: var(--rose-2); background: color-mix(in srgb, var(--card) 80%, var(--soft)); }
+.q:has(input:checked) .qt { color: var(--ink-2); }
+.burst { position: absolute; left: 12px; top: -6px; font-weight: 700; color: var(--rose); pointer-events: none; animation: burst .9s ease-out forwards; }
+@keyframes burst { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-26px); } }
+
+/* Когда можно дальше */
+.gate { display: flex; gap: 14px; align-items: center; padding: 14px 16px; border-radius: 18px; border: 2px dashed var(--rose-2); background: var(--card); }
+.gate .h { width: 22px; height: 22px; flex: none; }
+.gate b { display: block; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--lav); }
+
+.skill { border: 1px solid var(--rose-2); border-radius: 22px; background: var(--card); padding: 16px; display: grid; gap: 14px; box-shadow: var(--shadow); }
+.file { display: flex; gap: 12px; align-items: center; padding: 10px 12px; border-radius: 16px; background: var(--soft); }
+.file > div { min-width: 0; }
+.file b { font-weight: 700; }
+.file span { display: block; font-size: 14px; color: var(--ink-2); }
+.dl { margin-left: auto; flex: none; font: 700 15px/1 var(--f-body); color: #fff; text-decoration: none; background: var(--rose); border-radius: 99px; padding: 11px 16px; box-shadow: 0 4px 12px rgba(217, 85, 127, .25); }
+
+.plans { display: grid; gap: 10px; }
+.plan { border: 1px solid var(--line); border-radius: 18px; background: var(--card); padding: 14px 16px; display: grid; gap: 6px; align-content: start; }
+.plan.pick { border-color: var(--rose-2); }
+.plan h4 { font-size: 19px; display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.plan h4 span { font-family: var(--f-body); font-size: 15px; color: var(--rose); font-variant-numeric: tabular-nums; }
+.plan p { font-size: 15.5px; }
+.plan .when { font-size: 14px; color: var(--ink-2); }
+
+.dirs { display: grid; gap: 10px; }
+.dir { display: grid; grid-template-columns: 50px 1fr; gap: 14px; border: 1px solid var(--line); border-radius: 20px; background: var(--card); padding: 14px; }
+.dir h4 { font-size: 18px; margin-bottom: 6px; }
+.dir dl { margin: 0; display: grid; gap: 3px; font-size: 15.5px; }
+.dir dt { color: var(--lav); font-size: 12.5px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; margin-top: 4px; }
+.dir dd { margin: 0; }
+
+.note { border-left: 3px solid var(--rose-2); padding: 2px 0 2px 14px; color: var(--ink-2); font-size: 16px; max-width: 65ch; }
+.rule { background: var(--lav-soft); border-radius: 18px; padding: 14px 16px; }
+
+.final { background: var(--card); border: 1px solid var(--rose-2); border-radius: 26px; overflow: hidden; box-shadow: var(--shadow); display: grid; }
+.final img { display: block; width: 100%; height: auto; aspect-ratio: 1376 / 768; object-fit: cover; }
+.final .in { padding: 18px; display: grid; gap: 12px; }
+.final h2 { font-size: clamp(26px, 6.6vw, 36px); }
+
+.vgroup { display: grid; gap: 10px; }
+.vgroup h3 { font-size: 18px; }
+.vids { display: grid; gap: 10px; }
+.vid { display: grid; grid-template-columns: 136px 1fr; gap: 12px; align-items: start; text-decoration: none; color: var(--ink); background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 8px; }
+.vid img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 12px; display: block; background: var(--soft); }
+.vid .vt { display: grid; gap: 4px; min-width: 0; }
+.vid .vt b { font-weight: 700; font-size: 15px; line-height: 1.35; }
+.vid .vt span { font-size: 13.5px; color: var(--ink-2); }
+.vid .tag { justify-self: start; font-size: 12.5px; font-weight: 700; color: var(--rose); background: var(--soft); border-radius: 99px; padding: 1px 9px; }
+
+.books { display: grid; gap: 8px; }
+.book { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 16px; background: var(--card); }
+.book a { font-weight: 700; }
+.book span { grid-column: 1 / -1; font-size: 15px; color: var(--ink-2); }
+.book em { font-style: normal; font-size: 13px; color: var(--lav); font-weight: 700; white-space: nowrap; }
+
+.sec-h { display: flex; gap: 14px; align-items: center; }
+.sec-h h2 { font-size: clamp(24px, 6vw, 30px); }
+
+.hearts { display: flex; justify-content: center; gap: 10px; }
+.hearts .h { width: 14px; height: 14px; opacity: .7; }
+.hearts .h:nth-child(2) { width: 18px; height: 18px; opacity: 1; }
+
+footer { border-top: 1px solid var(--line); padding-block: 22px 44px; font-size: 14px; color: var(--ink-2); display: grid; gap: 10px; }
+footer .hand { font-size: 24px; }
+footer ul { display: grid; gap: 4px; }
+
+@media (min-width: 640px) {
+  body { font-size: 17.5px; }
+  .plans { grid-template-columns: repeat(3, 1fr); }
+  .vids { grid-template-columns: 1fr 1fr; }
+  .vid { grid-template-columns: 1fr; }
+  .card { padding: 22px; }
+}
+@media (min-width: 1000px) { .wrap { max-width: 800px; } main { gap: 72px; } }
+@media (prefers-reduced-motion: reduce) { .float, .burst { animation: none; } .prog i, .q .box svg { transition: none; } }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.5-9.2C1 8.3 3.2 4.5 7 4.5c2.1 0 3.6 1.2 5 3 1.4-1.8 2.9-3 5-3 3.8 0 6 3.8 4.5 7.3C19.5 16.4 12 21 12 21z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M5 5h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H10l-5 4v-4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/><path d="M8 10h8M8 13h5"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3M12 15v2"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></symbol>
+  <symbol id="i-wallet" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M16 15h2"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="18" r="2"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4M8 14h2M12 14h2M8 17h2"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="5" rx="1"/><path d="M5 13v7h14v-7M12 8v12M12 8c-1.5-3-5-3.5-5-1.5S10 8 12 8zM12 8c1.5-3 5-3.5 5-1.5S14 8 12 8z"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></symbol>
+  <symbol id="i-bug" viewBox="0 0 24 24"><rect x="8" y="7" width="8" height="12" rx="4"/><path d="M10 7a2 2 0 0 1 4 0M12 11v8M4 13h4M16 13h4M5 8l3 2M19 8l-3 2M5 19l3-2M19 19l-3-2"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20l1-5L15.5 4.5a2.1 2.1 0 0 1 3 0l1 1a2.1 2.1 0 0 1 0 3L9 19z"/><path d="M13.5 6.5l4 4M4 20h6"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="M8 16v-4M12 16V8M16 16v-6"/></symbol>
+  <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M4 10v4h3l7 4V6L7 10z"/><path d="M17.5 9a4 4 0 0 1 0 6M7 14l1.5 5h2.5L10 15"/></symbol>
+  <symbol id="i-bot" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="11" rx="3"/><path d="M12 4v4M9 15h6"/><circle class="fill" cx="9" cy="12" r="1.2"/><circle class="fill" cx="15" cy="12" r="1.2"/><circle cx="12" cy="3.5" r="1"/></symbol>
+  <symbol id="i-cube" viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path class="fill" d="M10 9l5 3-5 3z"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5M8 7h8M8 10h5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-archive" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M12 4v2M12 8v2M12 12v2"/><rect x="10.5" y="14" width="3" height="3" rx="1"/></symbol>
+</svg>
+
+<header class="bar">
+  <div class="wrap">
+    <div class="bar-row">
+      <a class="brand" href="#top"><svg class="h"><use href="#i-heart"/></svg>Путь Лены</a>
+      <div class="lvl"><span id="heartsTop">0</span><svg class="h"><use href="#i-heart"/></svg><b id="lvlTop">Семечко</b></div>
+    </div>
+    <div class="prog" aria-hidden="true"><i id="barTop"></i></div>
+    <nav class="chips" aria-label="Главы">
+      <a href="#ch1">Знакомство</a>
+      <a href="#ch2">Направление</a>
+      <a href="#ch3">Учёба</a>
+      <a href="#ch4">Работа</a>
+      <a href="#final">Мечта</a>
+      <a href="#video">Видео</a>
+      <a href="#books">Курсы</a>
+      <a href="#safety">Безопасность</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+
+  <section class="hero" aria-labelledby="h-hero">
+    <div class="cover">
+      <img src="img/hero.jpg" alt="Уютный стол у окна: ноутбук с сердечком на экране, чашка чая и пионы" width="1376" height="768">
+      <svg class="float f1" aria-hidden="true"><use href="#i-heart"/></svg>
+      <svg class="float f2" aria-hidden="true"><use href="#i-heart"/></svg>
+      <svg class="float f3" aria-hidden="true"><use href="#i-heart"/></svg>
+    </div>
+    <p class="hand">С любовью — для Лены</p>
+    <h1 id="h-hero">Твой нежный путь в IT</h1>
+    <p class="lead">Лена, впереди маленькое путешествие, и ты пройдёшь его не одна. Сначала познакомишься с Claude — умным и очень терпеливым помощником. Потом вместе вы найдёте дело по душе, спокойно научитесь ему на практике и найдёте работу, которую можно делать из дома.</p>
+    <div class="gift">
+      <span class="ico"><svg><use href="#i-gift"/></svg></span>
+      <p>Для Claude есть особый навык-наставник, собранный специально для тебя. Ставишь его один раз, и Claude бережно ведёт тебя шаг за шагом: сам предлагает задания, объясняет простыми словами и помнит, где вы остановились. Ничего копировать и придумывать не нужно.</p>
+    </div>
+    <p class="muted">Никаких скучных курсов и спешки. Учишься в своём темпе, а Claude объясняет столько раз, сколько захочется.</p>
+
+    <div class="card">
+      <h2><svg class="h"><use href="#i-heart"/></svg>Твоя карточка</h2>
+      <dl class="stats">
+        <dt>Имя</dt><dd>Лена</dd>
+        <dt>Направление</dt><dd>выберем вместе в главе 2</dd>
+        <dt>Наставник</dt><dd>Claude</dd>
+        <dt>Мечта</dt><dd>любимая работа из дома</dd>
+      </dl>
+      <div style="display:grid;gap:8px">
+        <div class="pline"><span id="lvlBig">Семечко</span><span id="heartsBig">0 сердечек</span></div>
+        <div class="prog" aria-hidden="true"><i id="barBig"></i></div>
+        <div class="levels" aria-label="Уровни">
+          <span data-lv="0">Семечко</span><span data-lv="1">Росток</span><span data-lv="2">Бутон</span><span data-lv="3">Цветок</span><span data-lv="4">Букет</span>
+        </div>
+        <p class="small muted">Отмечай пройденные шаги — за каждый получаешь сердечки, и твой цветок растёт. Всё сохраняется на этом устройстве.</p>
+      </div>
+    </div>
+
+    <ol class="map" aria-label="Карта пути">
+      <li><a href="#ch1"><img src="img/star.jpg" alt=""><span class="t"><b>Глава 1. Знакомство с Claude</b><span>1–2 недели · спокойно освоиться</span></span><span class="mark" data-ch-mark="ch1"></span></a></li>
+      <li><a href="#ch2"><img src="img/doors.jpg" alt=""><span class="t"><b>Глава 2. Дело по душе</b><span>3–6 вечеров · выбрать направление</span></span><span class="mark" data-ch-mark="ch2"></span></a></li>
+      <li><a href="#ch3"><img src="img/books.jpg" alt=""><span class="t"><b>Глава 3. Учёба на практике</b><span>8–12 недель · в своём темпе</span></span><span class="mark" data-ch-mark="ch3"></span></a></li>
+      <li><a href="#ch4"><img src="img/letter.jpg" alt=""><span class="t"><b>Глава 4. Первая работа</b><span>резюме и отклики</span></span><span class="mark" data-ch-mark="ch4"></span></a></li>
+      <li><a href="#final"><img src="img/home.jpg" alt=""><span class="t"><b>Мечта</b><span>любимая работа из дома</span></span><span class="mark" data-ch-mark="final"></span></a></li>
+    </ol>
+  </section>
+
+  <div class="hearts" aria-hidden="true"><svg class="h"><use href="#i-heart"/></svg><svg class="h"><use href="#i-heart"/></svg><svg class="h"><use href="#i-heart"/></svg></div>
+
+  <!-- ГЛАВА 1 -->
+  <section id="ch1" data-ch="ch1" aria-labelledby="h-ch1">
+    <div class="ch-art sq"><img src="img/star.jpg" alt="Маленькая светящаяся звёздочка машет с ноутбука" loading="lazy" width="760" height="760"></div>
+    <div class="ch-head">
+      <p class="eyebrow">Глава 1 · 1–2 недели</p>
+      <h2 id="h-ch1">Знакомство с Claude</h2>
+      <p class="ch-prog" data-ch-prog="ch1"></p>
+    </div>
+    <p>В этой главе ты поставишь Claude, подключишь наставника и просто подружишься с ним. Никакой спешки: по одному маленькому шагу в день.</p>
+
+    <div class="block">
+      <div class="block-h"><span class="ico"><svg><use href="#i-chat"/></svg></span><h3>Кто такой Claude</h3></div>
+      <p>Claude — ИИ-помощник от компании Anthropic. Ему можно писать обычными словами, как подруге в мессенджере, а он ответит, объяснит и поможет сделать.</p>
+      <ul class="list">
+        <li><svg class="h"><use href="#i-heart"/></svg><span>Объясняет любую тему простыми словами — и столько раз, сколько нужно.</span></li>
+        <li><svg class="h"><use href="#i-heart"/></svg><span>Понимает фото, скриншоты, таблицы и документы.</span></li>
+        <li><svg class="h"><use href="#i-heart"/></svg><span>Находит свежую информацию в интернете.</span></li>
+        <li><svg class="h"><use href="#i-heart"/></svg><span>Делает прямо в чате открытки, странички, мини-игры и таблицы.</span></li>
+        <li><svg class="h"><use href="#i-heart"/></svg><span>Помнит ваши прошлые разговоры, поэтому не придётся рассказывать всё заново.</span></li>
+      </ul>
+      <p class="note">Иногда Claude ошибается, даже очень уверенно. Всё важное лучше перепроверить.</p>
+    </div>
+
+    <div class="block">
+      <div class="block-h"><span class="ico"><svg><use href="#i-lock"/></svg></span><h3>Доступ</h3></div>
+      <p>Россию и Беларусь Anthropic официально не обслуживает: их нет в <a href="https://www.anthropic.com/supported-countries" target="_blank" rel="noopener">списке стран</a>. Как заходить, я тебе покажу. Если что-то не открывается, сразу пиши мне — разберёмся вместе.</p>
+    </div>
+
+    <div class="block">
+      <div class="block-h"><span class="ico"><svg><use href="#i-download"/></svg></span><h3>Установка</h3></div>
+      <div class="quests">
+        <label class="q" for="q-reg"><input type="checkbox" id="q-reg" data-h="1"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt">Зарегистрируйся на <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a> через почту или Google.</span><span class="pts">+1 <svg class="h"><use href="#i-heart"/></svg></span></label>
+        <label class="q" for="q-phone"><input type="checkbox" id="q-phone" data-h="1"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt">Поставь приложение Claude на телефон: в App Store или Google Play ищи «Claude by Anthropic».</span><span class="pts">+1 <svg class="h"><use href="#i-heart"/></svg></span></label>
+        <label class="q" for="q-pc"><input type="checkbox" id="q-pc" data-h="1"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt">Поставь программу на компьютер: <a href="https://claude.com/download" target="_blank" rel="noopener">claude.com/download</a>. Аккаунт и чаты везде одни и те же.</span><span class="pts">+1 <svg class="h"><use href="#i-heart"/></svg></span></label>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-h"><span class="ico"><svg><use href="#i-sparkle"/></svg></span><h3>Подключи наставника</h3></div>
+      <div class="skill">
+        <p>Навык — это записка для Claude, в которой рассказано, кто ты, куда вы идёте и как бережно тебя учить. Ставится один раз, удобнее всего с компьютера.</p>
+        <div class="file">
+          <span class="ico"><svg><use href="#i-archive"/></svg></span>
+          <div><b>lena-mentor.zip</b><span>Архив не нужно распаковывать.</span></div>
+          <a class="dl" href="lena-mentor.zip" download>Скачать</a>
+        </div>
+        <div class="quests">
+          <label class="q" for="q-files"><input type="checkbox" id="q-files" data-h="1"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt">Открой <kbd>Settings</kbd> → <kbd>Capabilities</kbd> и включи пункт <kbd>Create and edit files</kbd>. В старом меню он называется <kbd>Code execution and file creation</kbd>. Без него навыки не работают.</span><span class="pts">+1 <svg class="h"><use href="#i-heart"/></svg></span></label>
+          <label class="q" for="q-skill"><input type="checkbox" id="q-skill" data-h="2"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt">Открой <kbd>Customize</kbd> → <kbd>Skills</kbd>, нажми <kbd>+</kbd> → <kbd>Create skill</kbd> → <kbd>Upload a skill</kbd> и выбери архив <b>lena-mentor.zip</b>.</span><span class="pts">+2 <svg class="h"><use href="#i-heart"/></svg></span></label>
+          <label class="q" for="q-on"><input type="checkbox" id="q-on" data-h="1"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt">Проверь, что навык <b>lena-mentor</b> появился в списке и включён.</span><span class="pts">+1 <svg class="h"><use href="#i-heart"/></svg></span></label>
+          <label class="q" for="q-hello"><input type="checkbox" id="q-hello" data-h="2"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt">Напиши Claude «Привет, я Лена. Давай начнём?» — он тепло поздоровается, покажет весь путь и предложит первый шаг.</span><span class="pts">+2 <svg class="h"><use href="#i-heart"/></svg></span></label>
+        </div>
+        <p class="small muted">Если какая-то кнопка называется чуть иначе, не переживай: сфотографируй экран и спроси Claude, куда нажать, или напиши мне. Подробно — в <a href="https://support.claude.com/en/articles/12512180" target="_blank" rel="noopener">справке Anthropic про навыки</a>.</p>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-h"><span class="ico"><svg><use href="#i-wallet"/></svg></span><h3>Тарифы</h3></div>
+      <div class="plans">
+        <div class="plan pick"><h4>Free <span>0 $</span></h4><p>Чат на сайте, в приложении и на телефоне, поиск в интернете, файлы, память, навыки, до 5 проектов.</p><p class="when">Для начала этого хватит</p></div>
+        <div class="plan"><h4>Pro <span>20 $ / мес</span></h4><p>Минимум в 5 раз больше сообщений, плюс Claude Code и больше моделей. При оплате за год — 17 $ в месяц.</p><p class="when">Когда станешь учиться каждый день</p></div>
+        <div class="plan"><h4>Max <span>от 100 $</span></h4><p>В 5 или 20 раз больше, чем Pro.</p><p class="when">Пока точно не нужен</p></div>
+      </div>
+      <p class="small muted">Цены с <a href="https://claude.com/pricing" target="_blank" rel="noopener">claude.com/pricing</a> на 26.10.2026. Если сообщения закончились, это не страшно: лимит обновляется каждые 5 часов. С оплатой помогу.</p>
+    </div>
+
+    <div class="block">
+      <div class="block-h"><span class="ico"><svg><use href="#i-sliders"/></svg></span><h3>Немного настроек</h3></div>
+      <p>С ними поможет наставник — просто попроси, и он проведёт по шагам.</p>
+      <div class="quests">
+        <label class="q" for="q-mem"><input type="checkbox" id="q-mem" data-h="1"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt"><b>Память</b> включена — так Claude помнит, где вы остановились.</span><span class="pts">+1 <svg class="h"><use href="#i-heart"/></svg></span></label>
+        <label class="q" for="q-web"><input type="checkbox" id="q-web" data-h="1"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt"><b>Поиск в интернете</b> умеешь включать в меню инструментов чата.</span><span class="pts">+1 <svg class="h"><use href="#i-heart"/></svg></span></label>
+        <label class="q" for="q-incog"><input type="checkbox" id="q-incog" data-h="1"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt"><b>Инкогнито-чат</b> попробовала: такой разговор не попадает в память.</span><span class="pts">+1 <svg class="h"><use href="#i-heart"/></svg></span></label>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-h"><span class="ico"><svg><use href="#i-calendar"/></svg></span><h3>Семь шагов первой недели</h3></div>
+      <p class="muted">Наставник будет предлагать по одному шагу в день, минут на 20–40. Здесь просто отмечай, что уже получилось.</p>
+      <div class="quests">
+        <label class="q" for="q-w1"><input type="checkbox" id="q-w1" data-h="2"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt"><b>Знакомство.</b> Claude показывает, чем может помочь, на примерах из твоей жизни.</span><span class="pts">+2 <svg class="h"><use href="#i-heart"/></svg></span></label>
+        <label class="q" for="q-w2"><input type="checkbox" id="q-w2" data-h="2"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt"><b>Фото и файлы.</b> Отправляешь фото документа или скриншот — Claude объясняет, что там.</span><span class="pts">+2 <svg class="h"><use href="#i-heart"/></svg></span></label>
+        <label class="q" for="q-w3"><input type="checkbox" id="q-w3" data-h="2"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt"><b>Маленькое чудо.</b> Вместе делаете прямо в чате открытку, страничку или мини-игру.</span><span class="pts">+2 <svg class="h"><use href="#i-heart"/></svg></span></label>
+        <label class="q" for="q-w4"><input type="checkbox" id="q-w4" data-h="2"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt"><b>Проект.</b> Создаёшь свой первый проект в Claude и узнаёшь, зачем он нужен.</span><span class="pts">+2 <svg class="h"><use href="#i-heart"/></svg></span></label>
+        <label class="q" for="q-w5"><input type="checkbox" id="q-w5" data-h="2"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt"><b>Поиск.</b> Смотрите вместе, какие удалённые IT-вакансии для новичков встречаются чаще всего.</span><span class="pts">+2 <svg class="h"><use href="#i-heart"/></svg></span></label>
+        <label class="q" for="q-w6"><input type="checkbox" id="q-w6" data-h="2"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt"><b>Голосом.</b> Мини-урок о том, как устроен интернет, в голосовом режиме в приложении.</span><span class="pts">+2 <svg class="h"><use href="#i-heart"/></svg></span></label>
+        <label class="q" for="q-w7"><input type="checkbox" id="q-w7" data-h="2"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt"><b>Итог недели.</b> Что получается легко, что пока трудно и как вам удобнее заниматься.</span><span class="pts">+2 <svg class="h"><use href="#i-heart"/></svg></span></label>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-h"><span class="ico"><svg><use href="#i-chat"/></svg></span><h3>Как разговаривать с Claude</h3></div>
+      <ul class="list">
+        <li><svg class="h"><use href="#i-heart"/></svg><span><b>Рассказывай, зачем.</b> Чем больше Claude знает о задаче, тем точнее помогает.</span></li>
+        <li><svg class="h"><use href="#i-heart"/></svg><span><b>Говори, какой нужен ответ:</b> коротко или подробно, списком или по шагам.</span></li>
+        <li><svg class="h"><use href="#i-heart"/></svg><span><b>Переспрашивай без стеснения.</b> «Объясни проще» — совершенно нормальная просьба.</span></li>
+        <li><svg class="h"><use href="#i-heart"/></svg><span><b>Не понравился ответ — скажи.</b> Claude не обидится и предложит другой вариант.</span></li>
+        <li><svg class="h"><use href="#i-heart"/></svg><span><b>Новая тема — новый чат.</b> Так Claude не путается и лимит тратится медленнее.</span></li>
+      </ul>
+    </div>
+
+    <div class="gate"><svg class="h"><use href="#i-heart"/></svg><div><b>Можно идти дальше, когда</b><p>Ты общаешься с Claude каждый день, и тебе это нравится.</p></div></div>
+  </section>
+
+  <!-- ГЛАВА 2 -->
+  <section id="ch2" data-ch="ch2" aria-labelledby="h-ch2">
+    <div class="ch-art sq"><img src="img/doors.jpg" alt="Три садовые дорожки ведут к трём нежным дверцам" loading="lazy" width="760" height="760"></div>
+    <div class="ch-head">
+      <p class="eyebrow">Глава 2 · 3–6 вечеров</p>
+      <h2 id="h-ch2">Дело по душе</h2>
+      <p class="ch-prog" data-ch-prog="ch2"></p>
+    </div>
+    <p>Профессию не нужно выбирать по рекламе. Скажи наставнику «давай выбирать направление» — он мягко расспросит тебя о том, что тебе нравится, предложит три варианта и даст попробовать каждый.</p>
+
+    <div class="quests">
+      <label class="q" for="q-int"><input type="checkbox" id="q-int" data-h="3"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt">Поговорила с наставником и получила три направления.</span><span class="pts">+3 <svg class="h"><use href="#i-heart"/></svg></span></label>
+      <label class="q" for="q-try"><input type="checkbox" id="q-try" data-h="6"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt">Попробовала все три маленьких задания. Выбирай то, за чем время пролетело незаметно.</span><span class="pts">+6 <svg class="h"><use href="#i-heart"/></svg></span></label>
+      <label class="q" for="q-pick"><input type="checkbox" id="q-pick" data-h="3"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt">Выбрала своё направление и рассказала мне.</span><span class="pts">+3 <svg class="h"><use href="#i-heart"/></svg></span></label>
+    </div>
+
+    <div class="block">
+      <h3>Направления, где Claude особенно помогает</h3>
+      <div class="dirs">
+        <article class="dir"><span class="ico lg"><svg><use href="#i-pen"/></svg></span><div><h4>Дизайн интерфейсов</h4><dl><dt>Чем занимаешься</dt><dd>Рисуешь красивые и удобные экраны сайтов и приложений в Figma.</dd><dt>Как помогает Claude</dt><dd>Разбирает твои макеты по скриншотам и учит принципам.</dd><dt>Попробовать</dt><dd>Перерисовать экран любимого приложения.</dd></dl></div></article>
+        <article class="dir"><span class="ico lg lav"><svg><use href="#i-bug"/></svg></span><div><h4>Тестирование</h4><dl><dt>Чем занимаешься</dt><dd>Находишь ошибки в сайтах и приложениях и аккуратно их описываешь.</dd><dt>Как помогает Claude</dt><dd>Объясняет виды проверок и смотрит твои описания ошибок.</dd><dt>Попробовать</dt><dd>Найти и описать 5 ошибок на любом сайте.</dd></dl></div></article>
+        <article class="dir"><span class="ico lg"><svg><use href="#i-megaphone"/></svg></span><div><h4>Контент и соцсети с ИИ</h4><dl><dt>Чем занимаешься</dt><dd>Ведёшь соцсети, пишешь тексты, придумываешь визуал.</dd><dt>Как помогает Claude</dt><dd>Помогает с текстами, идеями и планом публикаций.</dd><dt>Попробовать</dt><dd>Контент-план на неделю для любимого кафе.</dd></dl></div></article>
+        <article class="dir"><span class="ico lg lav"><svg><use href="#i-code"/></svg></span><div><h4>Веб-разработка</h4><dl><dt>Чем занимаешься</dt><dd>Делаешь сайты.</dd><dt>Как помогает Claude</dt><dd>Пишет код вместе с тобой и объясняет каждую строку.</dd><dt>Попробовать</dt><dd>Страничка «Обо мне».</dd></dl></div></article>
+        <article class="dir"><span class="ico lg"><svg><use href="#i-chart"/></svg></span><div><h4>Аналитика данных</h4><dl><dt>Чем занимаешься</dt><dd>Находишь смысл в цифрах и строишь понятные графики.</dd><dt>Как помогает Claude</dt><dd>Учит Excel, SQL и Python на твоих же данных.</dd><dt>Попробовать</dt><dd>Разобрать таблицу своих расходов.</dd></dl></div></article>
+        <article class="dir"><span class="ico lg lav"><svg><use href="#i-bot"/></svg></span><div><h4>Автоматизация и боты</h4><dl><dt>Чем занимаешься</dt><dd>Делаешь ботов и ИИ-помощников.</dd><dt>Как помогает Claude</dt><dd>Собирает с тобой бота для Telegram и объясняет каждый шаг.</dd><dt>Попробовать</dt><dd>Бот, который присылает погоду.</dd></dl></div></article>
+        <article class="dir"><span class="ico lg"><svg><use href="#i-cube"/></svg></span><div><h4>3D-графика</h4><dl><dt>Чем занимаешься</dt><dd>Создаёшь объёмные предметы в Blender.</dd><dt>Как помогает Claude</dt><dd>Объясняет инструменты и разбирает твои работы.</dd><dt>Попробовать</dt><dd>Смоделировать кружку.</dd></dl></div></article>
+      </div>
+      <p class="note">Спрос и зарплаты всё время меняются, поэтому свежую картину рынка лучше спросить у наставника с включённым поиском.</p>
+    </div>
+
+    <div class="gate"><svg class="h"><use href="#i-heart"/></svg><div><b>Можно идти дальше, когда</b><p>Ты попробовала три направления, и одно тебе по-настоящему понравилось.</p></div></div>
+  </section>
+
+  <!-- ГЛАВА 3 -->
+  <section id="ch3" data-ch="ch3" aria-labelledby="h-ch3">
+    <div class="ch-art sq"><img src="img/books.jpg" alt="Стопка пастельных книг и растение с листьями-сердечками" loading="lazy" width="760" height="760"></div>
+    <div class="ch-head">
+      <p class="eyebrow">Глава 3 · 8–12 недель</p>
+      <h2 id="h-ch3">Учёба на практике</h2>
+      <p class="ch-prog" data-ch-prog="ch3"></p>
+    </div>
+    <p>Наставник составит мягкий учебный план и будет вести каждое занятие: коротко объяснит тему, даст задание, бережно проверит и задаст пару вопросов, чтобы всё уложилось.</p>
+
+    <div class="quests">
+      <label class="q" for="q-p1"><input type="checkbox" id="q-p1" data-h="2"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt">Вместе с наставником создала проект «Профессия: [твоё направление]». Что куда вставить, он подскажет.</span><span class="pts">+2 <svg class="h"><use href="#i-heart"/></svg></span></label>
+      <label class="q" for="q-p2"><input type="checkbox" id="q-p2" data-h="2"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt">Получила учебный план на 8–12 недель и сохранила его в проект.</span><span class="pts">+2 <svg class="h"><use href="#i-heart"/></svg></span></label>
+      <label class="q" for="q-p3"><input type="checkbox" id="q-p3" data-h="4"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt">Первая неделя занятий — по часу-два в день, как тебе удобно.</span><span class="pts">+4 <svg class="h"><use href="#i-heart"/></svg></span></label>
+      <label class="q" for="q-p4"><input type="checkbox" id="q-p4" data-h="2"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt">Первый тёплый разбор недели: что получилось, что было трудно, что дальше.</span><span class="pts">+2 <svg class="h"><use href="#i-heart"/></svg></span></label>
+      <label class="q" for="q-m1"><input type="checkbox" id="q-m1" data-h="5"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt">Первая законченная работа для портфолио. Как её красиво выложить, покажет наставник.</span><span class="pts">+5 <svg class="h"><use href="#i-heart"/></svg></span></label>
+      <label class="q" for="q-m2"><input type="checkbox" id="q-m2" data-h="5"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt">Вторая работа готова.</span><span class="pts">+5 <svg class="h"><use href="#i-heart"/></svg></span></label>
+      <label class="q" for="q-m3"><input type="checkbox" id="q-m3" data-h="5"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt">Третья работа готова.</span><span class="pts">+5 <svg class="h"><use href="#i-heart"/></svg></span></label>
+      <label class="q" for="q-cc"><input type="checkbox" id="q-cc" data-h="3"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt">Если выбрала программирование: попробовала Claude Code вместе с наставником.</span><span class="pts">+3 <svg class="h"><use href="#i-heart"/></svg></span></label>
+    </div>
+
+    <p class="rule">Самое главное: пусть Claude делает вместе с тобой, а не вместо тебя. Наставник специально сначала даёт подсказку, а не готовый ответ, — так знания остаются с тобой.</p>
+
+    <div class="gate"><svg class="h"><use href="#i-heart"/></svg><div><b>Можно идти дальше, когда</b><p>В портфолио 3–5 законченных работ, и про каждую ты можешь рассказать сама.</p></div></div>
+  </section>
+
+  <!-- ГЛАВА 4 -->
+  <section id="ch4" data-ch="ch4" aria-labelledby="h-ch4">
+    <div class="ch-art sq"><img src="img/letter.jpg" alt="Конверт с сердечком летит на крылышках среди облаков" loading="lazy" width="760" height="760"></div>
+    <div class="ch-head">
+      <p class="eyebrow">Глава 4</p>
+      <h2 id="h-ch4">Первая работа</h2>
+      <p class="ch-prog" data-ch-prog="ch4"></p>
+    </div>
+    <p>Самое волнительное, но ты будешь готова. Наставник поможет с каждым шагом и поддержит, если что-то не сложится с первого раза.</p>
+
+    <div class="quests">
+      <label class="q" for="q-cv"><input type="checkbox" id="q-cv" data-h="3"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt"><b>Резюме</b> готово — честное, только о том, что ты умеешь и можешь показать.</span><span class="pts">+3 <svg class="h"><use href="#i-heart"/></svg></span></label>
+      <label class="q" for="q-apply"><input type="checkbox" id="q-apply" data-h="3"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt"><b>Первые 10 откликов</b> на hh.ru, Хабр Карьере или в Телеграм-каналах с вакансиями. Первые заказы часто приходят с фриланса: Kwork, FL.ru.</span><span class="pts">+3 <svg class="h"><use href="#i-heart"/></svg></span></label>
+      <label class="q" for="q-letter"><input type="checkbox" id="q-letter" data-h="2"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt"><b>Короткое письмо</b> к каждой вакансии — своими словами.</span><span class="pts">+2 <svg class="h"><use href="#i-heart"/></svg></span></label>
+      <label class="q" for="q-mock"><input type="checkbox" id="q-mock" data-h="4"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt"><b>Тренировка собеседования</b> с наставником, лучше голосом — тогда настоящее будет совсем не страшным.</span><span class="pts">+4 <svg class="h"><use href="#i-heart"/></svg></span></label>
+      <label class="q" for="q-test"><input type="checkbox" id="q-test" data-h="3"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt"><b>Тестовое задание</b> разобрала с наставником, а сдала то, что понимаешь сама.</span><span class="pts">+3 <svg class="h"><use href="#i-heart"/></svg></span></label>
+      <label class="q" for="q-fail"><input type="checkbox" id="q-fail" data-h="2"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt"><b>Если пришёл отказ</b> — это не про тебя, а про одну вакансию. Разобрали его с наставником и пошли дальше.</span><span class="pts">+2 <svg class="h"><use href="#i-heart"/></svg></span></label>
+    </div>
+  </section>
+
+  <!-- МЕЧТА -->
+  <section id="final" data-ch="final" aria-labelledby="h-final">
+    <div class="final">
+      <img src="img/home.jpg" alt="Уютное кресло, ноутбук, спящий котик и букет цветов на закате" loading="lazy" width="1376" height="768">
+      <div class="in">
+        <p class="eyebrow">Мечта</p>
+        <h2 id="h-final">Любимая работа из дома</h2>
+        <p>Первая удалённая работа или первый постоянный заказчик. Своё расписание, чай в любимой кружке и время на то, что тебе по-настоящему дорого.</p>
+        <p class="muted">И это только начало: Claude становится умнее с каждым обновлением, а вместе с ним растёшь и ты.</p>
+        <div class="quests">
+          <label class="q" for="q-job"><input type="checkbox" id="q-job" data-h="20"><span class="box"><svg><use href="#i-heart"/></svg></span><span class="qt"><b>Первая работа или первый заказ!</b></span><span class="pts">+20 <svg class="h"><use href="#i-heart"/></svg></span></label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="hearts" aria-hidden="true"><svg class="h"><use href="#i-heart"/></svg><svg class="h"><use href="#i-heart"/></svg><svg class="h"><use href="#i-heart"/></svg></div>
+
+  <!-- ВИДЕО -->
+  <section id="video" aria-labelledby="h-video">
+    <div class="sec-h"><span class="ico lg"><svg><use href="#i-play"/></svg></span><h2 id="h-video">Видео на русском</h2></div>
+    <p>Смотри, когда захочется, и сразу пробуй у себя. Все ролики на русском, вышли в 2026 году и проверены 26.10.2026. Нажми на карточку — откроется YouTube.</p>
+
+    <div class="vgroup">
+      <h3>Для самого начала</h3>
+      <div class="vids">
+        <a class="vid" href="https://www.youtube.com/watch?v=VQCtODel-mc" target="_blank" rel="noopener"><img src="yt/VQCtODel-mc.jpg" alt="" loading="lazy" width="320" height="180"><span class="vt"><b>Как пользоваться Claude в 2026 — полный гайд для новичка</b><span>Дмитрий Москаленко · 13 мин</span><span class="tag">Посмотреть первым</span></span></a>
+        <a class="vid" href="https://www.youtube.com/watch?v=9OivrtQv48s" target="_blank" rel="noopener"><img src="yt/9OivrtQv48s.jpg" alt="" loading="lazy" width="320" height="180"><span class="vt"><b>Claude для новичков: почему он кажется сложным и с чего начать</b><span>Bohomolov Lab · 28 мин</span><span class="tag">Глава 1</span></span></a>
+        <a class="vid" href="https://www.youtube.com/watch?v=fk4jiRPWGBg" target="_blank" rel="noopener"><img src="yt/fk4jiRPWGBg.jpg" alt="" loading="lazy" width="320" height="180"><span class="vt"><b>Claude: полный старт для новичка — регистрация, настройки, проекты</b><span>Сухов:Live · 44 мин</span><span class="tag">Во время настройки</span></span></a>
+        <a class="vid" href="https://www.youtube.com/watch?v=r3KVQQ90Au4" target="_blank" rel="noopener"><img src="yt/r3KVQQ90Au4.jpg" alt="" loading="lazy" width="320" height="180"><span class="vt"><b>Полный курс по Claude на 2026 год (от нуля до профи)</b><span>Кайсар Курмангалиев · 50 мин</span><span class="tag">Глава 1</span></span></a>
+      </div>
+    </div>
+
+    <div class="vgroup">
+      <h3>Чуть глубже</h3>
+      <div class="vids">
+        <a class="vid" href="https://www.youtube.com/watch?v=R9WHasrqzT8" target="_blank" rel="noopener"><img src="yt/R9WHasrqzT8.jpg" alt="" loading="lazy" width="320" height="180"><span class="vt"><b>Инструкция к Claude Projects: полный разбор</b><span>AI Прорыв · 18 мин</span><span class="tag">Перед главой 3</span></span></a>
+        <a class="vid" href="https://www.youtube.com/watch?v=xrZZiXWPoB0" target="_blank" rel="noopener"><img src="yt/xrZZiXWPoB0.jpg" alt="" loading="lazy" width="320" height="180"><span class="vt"><b>5 уровней владения Claude: на каком застрял ты?</b><span>AI Прорыв · 24 мин</span><span class="tag">Конец главы 1</span></span></a>
+        <a class="vid" href="https://www.youtube.com/watch?v=hZUR3VLVex0" target="_blank" rel="noopener"><img src="yt/hZUR3VLVex0.jpg" alt="" loading="lazy" width="320" height="180"><span class="vt"><b>Почему Claude AI — лучший?</b><span>Droider · 32 мин</span><span class="tag">Для вдохновения</span></span></a>
+        <a class="vid" href="https://www.youtube.com/watch?v=SHJbkbQkg8I" target="_blank" rel="noopener"><img src="yt/SHJbkbQkg8I.jpg" alt="" loading="lazy" width="320" height="180"><span class="vt"><b>Claude: цифровой сотрудник, который умеет всё</b><span>Визави · 18 мин</span><span class="tag">Для вдохновения</span></span></a>
+        <a class="vid" href="https://www.youtube.com/watch?v=ZZkNX0elp30" target="_blank" rel="noopener"><img src="yt/ZZkNX0elp30.jpg" alt="" loading="lazy" width="320" height="180"><span class="vt"><b>Большой гайд по Claude: вот что я понял за 1000 часов</b><span>Нейропросвещение · 59 мин</span><span class="tag">Через месяц</span></span></a>
+        <a class="vid" href="https://www.youtube.com/watch?v=6a8BgNTF1TU" target="_blank" rel="noopener"><img src="yt/6a8BgNTF1TU.jpg" alt="" loading="lazy" width="320" height="180"><span class="vt"><b>Полный курс Claude 2026 на 3 часа: Cowork, скиллы, субагенты</b><span>Никита Велс · 2 ч 45 мин</span><span class="tag">Когда освоишься</span></span></a>
+      </div>
+    </div>
+
+    <div class="vgroup">
+      <h3>Если выберешь программирование</h3>
+      <div class="vids">
+        <a class="vid" href="https://www.youtube.com/watch?v=1PYyVEhd6W4" target="_blank" rel="noopener"><img src="yt/1PYyVEhd6W4.jpg" alt="" loading="lazy" width="320" height="180"><span class="vt"><b>Claude Code с нуля, урок 1: что это и как пользоваться</b><span>Гоша Дударь · 7 мин, дальше серия</span><span class="tag">Глава 3</span></span></a>
+        <a class="vid" href="https://www.youtube.com/watch?v=5R9cEQgPfvo" target="_blank" rel="noopener"><img src="yt/5R9cEQgPfvo.jpg" alt="" loading="lazy" width="320" height="180"><span class="vt"><b>Claude Code с нуля: полный курс в одном видео</b><span>Школа itProger · 1 ч 8 мин</span><span class="tag">Глава 3</span></span></a>
+        <a class="vid" href="https://www.youtube.com/watch?v=2tanO-4sgr8" target="_blank" rel="noopener"><img src="yt/2tanO-4sgr8.jpg" alt="" loading="lazy" width="320" height="180"><span class="vt"><b>Дай мне 20 минут, и ты получишь 10 000 часов знаний о Claude Code</b><span>Артём Воронков · 21 мин</span><span class="tag">Глава 3</span></span></a>
+        <a class="vid" href="https://www.youtube.com/watch?v=7MmUUs4HVms" target="_blank" rel="noopener"><img src="yt/7MmUUs4HVms.jpg" alt="" loading="lazy" width="320" height="180"><span class="vt"><b>Claude Code: полный курс для начинающих (2026)</b><span>Никита Ефимов · 1 ч 13 мин</span><span class="tag">Глава 3</span></span></a>
+      </div>
+    </div>
+    <p class="small muted">Интерфейс Claude часто обновляется, поэтому в роликах кнопки могут выглядеть иначе. Платные курсы, которые советуют авторы, тебе не нужны. Про доступ из России в роликах советуют разное — с этим лучше сразу ко мне.</p>
+  </section>
+
+  <!-- КУРСЫ -->
+  <section id="books" aria-labelledby="h-books">
+    <div class="sec-h"><span class="ico lg lav"><svg><use href="#i-book"/></svg></span><h2 id="h-books">Бесплатные курсы</h2></div>
+    <p>Самые полезные бесплатные уроки делает сама Anthropic в своей <a href="https://anthropic.skilljar.com/" target="_blank" rel="noopener">Академии</a>. Они на английском: можно включить перевод страницы в браузере или попросить наставника пересказать урок по-русски.</p>
+    <div class="books">
+      <div class="book"><a href="https://anthropic.skilljar.com/claude-101" target="_blank" rel="noopener">Claude 101</a><em>Глава 1</em><span>Основы: первый разговор, проекты, навыки. Бесплатно, в конце — сертификат.</span></div>
+      <div class="book"><a href="https://anthropic.skilljar.com/ai-fluency-framework-foundations" target="_blank" rel="noopener">AI Fluency: Framework &amp; Foundations</a><em>Главы 1–2</em><span>Как ставить ИИ задачи и проверять его работу.</span></div>
+      <div class="book"><a href="https://anthropic.skilljar.com/ai-capabilities-and-limitations" target="_blank" rel="noopener">AI Capabilities and Limitations</a><em>Главы 1–2</em><span>Что ИИ умеет и где может ошибаться.</span></div>
+      <div class="book"><a href="https://anthropic.skilljar.com/claude-code-101" target="_blank" rel="noopener">Claude Code 101</a><em>Глава 3</em><span>Если выберешь программирование.</span></div>
+    </div>
+  </section>
+
+  <!-- БЕЗОПАСНОСТЬ -->
+  <section id="safety" aria-labelledby="h-safety">
+    <div class="sec-h"><span class="ico lg"><svg><use href="#i-shield"/></svg></span><h2 id="h-safety">Береги себя</h2></div>
+    <ul class="list">
+      <li><svg class="h"><use href="#i-heart"/></svg><span>Никому не отправляй пароли, коды из SMS и данные карты — ни людям, ни Claude.</span></li>
+      <li><svg class="h"><use href="#i-heart"/></svg><span>Чужие личные данные и рабочие документы загружай только с разрешения их владельца.</span></li>
+      <li><svg class="h"><use href="#i-heart"/></svg><span>Всё важное — про деньги, здоровье, законы — лучше перепроверить.</span></li>
+      <li><svg class="h"><use href="#i-heart"/></svg><span>Если Claude предлагает что-то запустить на компьютере, сначала попроси объяснить, что это.</span></li>
+      <li><svg class="h"><use href="#i-heart"/></svg><span>Скачивай Claude только с claude.ai, claude.com и из официальных магазинов приложений. Навык бери только с этой страницы.</span></li>
+      <li><svg class="h"><use href="#i-heart"/></svg><span>Не покупай чужие аккаунты и «вечные подписки» у посредников.</span></li>
+    </ul>
+  </section>
+
+  <footer>
+    <p class="hand">У тебя всё получится</p>
+    <p>Сделано с любовью 26 октября 2026 года.</p>
+    <ul>
+      <li><a href="https://claude.com/pricing" target="_blank" rel="noopener">Тарифы Claude</a> — цены на 26.10.2026</li>
+      <li><a href="https://support.claude.com/en/articles/12512180" target="_blank" rel="noopener">Навыки в Claude</a> — доступны и на бесплатном тарифе</li>
+      <li><a href="https://www.anthropic.com/supported-countries" target="_blank" rel="noopener">Поддерживаемые страны</a> — список Anthropic</li>
+      <li><a href="https://anthropic.skilljar.com/" target="_blank" rel="noopener">Академия Anthropic</a> — бесплатные курсы</li>
+    </ul>
+  </footer>
+</main>
+
+<script>
+(function () {
+  var KEY = 'lena-steps-v1';
+  var LEVELS = [['Семечко', 0], ['Росток', 15], ['Бутон', 35], ['Цветок', 60], ['Букет', 90]];
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('.q input[type="checkbox"]'));
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { saved = {}; }
+  boxes.forEach(function (b) { if (saved[b.id]) b.checked = true; });
+
+  function plural(n, one, few, many) {
+    var a = n % 10, b = n % 100;
+    if (a === 1 && b !== 11) return one;
+    if (a >= 2 && a <= 4 && (b < 12 || b > 14)) return few;
+    return many;
+  }
+
+  function render() {
+    var h = 0;
+    boxes.forEach(function (b) { if (b.checked) h += Number(b.dataset.h) || 0; });
+    var li = 0;
+    for (var i = 0; i < LEVELS.length; i++) if (h >= LEVELS[i][1]) li = i;
+    var from = LEVELS[li][1], to = li + 1 < LEVELS.length ? LEVELS[li + 1][1] : from;
+    var pct = to > from ? Math.round((h - from) / (to - from) * 100) : 100;
+    document.getElementById('heartsTop').textContent = h;
+    document.getElementById('lvlTop').textContent = LEVELS[li][0];
+    document.getElementById('lvlBig').textContent = LEVELS[li][0] + (to > from ? ' · до «' + LEVELS[li + 1][0] + '» ещё ' + (to - h) : ' · ты прошла весь путь');
+    document.getElementById('heartsBig').textContent = h + ' ' + plural(h, 'сердечко', 'сердечка', 'сердечек');
+    document.getElementById('barTop').style.width = pct + '%';
+    document.getElementById('barBig').style.width = pct + '%';
+    document.querySelectorAll('.levels span').forEach(function (s) { s.classList.toggle('on', Number(s.dataset.lv) <= li); });
+
+    document.querySelectorAll('[data-ch]').forEach(function (sec) {
+      var id = sec.getAttribute('data-ch');
+      var list = sec.querySelectorAll('.q input[type="checkbox"]');
+      var done = 0;
+      list.forEach(function (b) { if (b.checked) done++; });
+      var full = list.length > 0 && done === list.length;
+      var prog = sec.querySelector('[data-ch-prog]');
+      if (prog) {
+        prog.textContent = full ? 'Глава пройдена — ты умница' : 'Пройдено ' + done + ' из ' + list.length + ' ' + plural(list.length, 'шага', 'шагов', 'шагов');
+        prog.classList.toggle('full', full);
+      }
+      var mark = document.querySelector('[data-ch-mark="' + id + '"]');
+      if (mark) mark.textContent = full ? 'пройдено' : (done ? done + ' / ' + list.length : '');
+    });
+  }
+
+  boxes.forEach(function (b) {
+    b.addEventListener('change', function () {
+      saved[b.id] = b.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {}
+      if (b.checked && !reduce) {
+        var s = document.createElement('span');
+        s.className = 'burst';
+        s.textContent = '+' + b.dataset.h + ' ♥';
+        b.closest('.q').appendChild(s);
+        setTimeout(function () { s.remove(); }, 950);
+      }
+      render();
+    });
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
